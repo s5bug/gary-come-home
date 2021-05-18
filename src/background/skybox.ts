@@ -1,6 +1,8 @@
 import { mat3, mat4, vec3 } from 'gl-matrix';
 import type { ProgramInfo } from './shader';
 import { initShaderProgram } from './shader';
+import skyboxVert from './shaders/skybox.vert';
+import skyboxFrag from './shaders/skybox.frag';
 
 export class Skybox {
     context: WebGLRenderingContext;
@@ -16,9 +18,6 @@ export class Skybox {
     }
 
     static async init(gl: WebGLRenderingContext): Promise<Skybox> {
-        const skyboxVert = await fetch("shaders/skybox.vert").then(r => r.text());
-        const skyboxFrag = await fetch("shaders/skybox.frag").then(r => r.text());
-
         const skyboxShaderProgram = initShaderProgram(gl, skyboxVert, skyboxFrag);
         const skyboxProgramInfo = {
             program: skyboxShaderProgram,

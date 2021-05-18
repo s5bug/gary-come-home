@@ -3,6 +3,10 @@ import type { ProgramInfo } from './shader';
 import { initShaderProgram } from './shader';
 import { Skybox } from './skybox';
 import { GLTerrain, Terrain } from './terrain';
+import defaultVert from './shaders/default.vert';
+import defaultFrag from './shaders/default.frag';
+import colorVert from './shaders/color.vert';
+import colorFrag from './shaders/color.frag';
 
 export class Scene {
     context: WebGLRenderingContext;
@@ -18,12 +22,6 @@ export class Scene {
     }
 
     static async init(canvas: HTMLCanvasElement): Promise<Scene> {
-        const defaultVert = await fetch("shaders/default.vert").then(r => r.text());
-        const defaultFrag = await fetch("shaders/default.frag").then(r => r.text());
-
-        const colorVert = await fetch("shaders/color.vert").then(r => r.text());
-        const colorFrag = await fetch("shaders/color.frag").then(r => r.text());
-    
         const gl: WebGLRenderingContext = canvas.getContext('webgl');
         gl.getExtension('OES_element_index_uint');
     
