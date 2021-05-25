@@ -25,15 +25,20 @@ export let data: SongData;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+
+		text-align: center;
 	}
 
 	footer {
 		max-width: 240px;
-		margin: 0.5em auto;
+		margin: 0.5em;
+		padding: 0.5em;
+		background: rgba(0.4, 0.4, 0.4, 0.4);
+		border-radius: 0.5em;
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #ffffff;
 		text-transform: uppercase;
 		font-size: 4em;
 		margin: 0;

@@ -1449,7 +1449,7 @@ const garyWontYouComeHome: Line = {
         {
             syllables: [
                 {
-                    content: "home)"
+                    content: "home"
                 }
             ]
         }

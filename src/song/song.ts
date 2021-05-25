@@ -22,7 +22,7 @@ export type Word = {
 }
 
 export type Syllable = {
-    begin: number,
+    begin?: number,
     content: string,
     end?: number
 }
