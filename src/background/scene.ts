@@ -51,7 +51,7 @@ export class Scene {
         };
 
         const skybox: Skybox = await Skybox.init(gl);
-        const terrain: GLTerrain = new Terrain().toGL(gl, colorProgramInfo);
+        const terrain: GLTerrain = new Terrain().toGL(gl);
     
         return new Scene(gl, colorProgramInfo, skybox, terrain);
     }

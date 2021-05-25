@@ -7,6 +7,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import glslify from 'rollup-plugin-glslify';
+import url from '@rollup/plugin-url';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -68,6 +69,12 @@ export default {
 
 		// Bundle shaders as strings
 		glslify(),
+
+		// Bundle MP3s as output files
+		url({
+			include: ['**/*.mp3'],
+			publicPath: "build/"
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

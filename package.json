@@ -12,6 +12,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
+    "@rollup/plugin-url": "^6.0.0",
     "@tsconfig/svelte": "^1.0.0",
     "@types/delaunator": "^3.0.0",
     "rollup": "^2.3.4",
@@ -29,8 +30,12 @@
   "dependencies": {
     "delaunator": "^5.0.0",
     "gl-matrix": "^3.3.0",
+    "glsl-noise": "^0.0.0",
     "poisson-disk-sampling": "^2.2.2",
     "simplex-noise": "^2.4.0",
     "sirv-cli": "^1.0.0"
+  },
+  "resolutions": {
+    "metrohash": "git://github.com/swernerx/node-metrohash.git#master"
   }
 }
